@@ -59,7 +59,7 @@ const audioClips = [
 
 function DrumMachine() {
   return (
-    <div className="min-vh-100 text-white">
+    <div className="card min-vh-100 text-white">
       <div className="text-center">
         {audioClips.map((clip) => (
           <Pad key={clip.id} clip={clip} />

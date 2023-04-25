@@ -10,11 +10,17 @@ function App() {
   const [volume, setVolume] = useState(1);
 
   return (
-    <div>
-      <PreferencesContext.Provider value={{ volume, setVolume }}>
-        <DrumMachine />
-        <VolumeSlider />
-      </PreferencesContext.Provider>
+    <div className="p-5">
+      <div className="container pt-5">
+        <div className="jumbotron p-5">
+          <div className="card">
+            <PreferencesContext.Provider value={{ volume, setVolume }}>
+              <DrumMachine />
+              <VolumeSlider />
+            </PreferencesContext.Provider>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
