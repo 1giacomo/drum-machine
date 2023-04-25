@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import PreferencesContext from "./PreferencesContext.js";
+import { useContext } from "react";
 
 function Pad({ clip }) {
+  const settingsInfo = useContext(PreferencesContext);
+
   const [active, setActive] = useState(false);
 
   useEffect(() => {
@@ -21,6 +25,7 @@ function Pad({ clip }) {
     const audioTag = document.getElementById(clip.keyTrigger);
     setActive(true);
     setTimeout(() => setActive(false), 200);
+    audioTag.volume = settingsInfo.volume;
     audioTag.currentTime = 0;
     audioTag.play();
   };
